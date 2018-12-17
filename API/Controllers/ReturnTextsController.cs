@@ -45,6 +45,24 @@ namespace API.Controllers
 
             return Ok(returnText);
         }
+        // GET: api/ReturnTexts/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetReturnText2([FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var returnText = await _context.ReturnText.FindAsync(id);
+
+            if (returnText == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(returnText.Text);
+        }
 
         // PUT: api/ReturnTexts/5
         [HttpPut("{id}")]
