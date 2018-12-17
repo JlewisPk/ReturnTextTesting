@@ -46,24 +46,23 @@ namespace API.Controllers
             return Ok(returnText);
         }
         // GET: api/ReturnTexts/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetReturnText2([FromRoute] int id)
+        [HttpGet("/getText/{id}")]
+        public async Task<ContentResult> GetReturnTextUsingEmail([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return Content("You need to pass Email address too!");
             }
 
             var returnText = await _context.ReturnText.FindAsync(id);
 
             if (returnText == null)
             {
-                return NotFound();
+                return Content("No given Email exist!");
             }
 
-            return Ok(returnText.Text);
+            return Content(returnText.Text);
         }
-
         // PUT: api/ReturnTexts/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutReturnText([FromRoute] int id, [FromBody] ReturnText returnText)
