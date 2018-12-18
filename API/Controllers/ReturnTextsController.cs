@@ -47,8 +47,12 @@ namespace API.Controllers
         }
         // GET: api/ReturnTexts/5
         [HttpPost("/getText/{id}")]
-        public async Task<ContentResult> GetReturnTextUsingEmail([FromRoute] int id)
+        [Produces("application/json")]
+        public async Task<ContentResult> GetReturnTextUsingEmail([FromRoute] int id, SlashCom slashCom)
         {
+            System.Diagnostics.Debug.WriteLine("=================================================");
+            System.Diagnostics.Debug.WriteLine(slashCom.text);
+            System.Diagnostics.Debug.WriteLine("=================================================");
             if (!ModelState.IsValid)
             {
                 return Content("You need to pass Email address too!");
