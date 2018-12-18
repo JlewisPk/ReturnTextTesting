@@ -64,8 +64,10 @@ namespace API.Controllers
             {
                 return Content("No given Email exist!");
             }
-
-            return Content(returnText.Text);
+            
+                return Content(slashCom.text);
+            
+            //return Content(returnText.Text);
         }
         // PUT: api/ReturnTexts/5
         [HttpPut("{id}")]
