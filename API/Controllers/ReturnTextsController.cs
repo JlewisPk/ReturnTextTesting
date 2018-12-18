@@ -51,7 +51,7 @@ namespace API.Controllers
         public async Task<ContentResult> GetReturnTextUsingEmail([FromRoute] int id, SlashCom slashCom)
         {
             System.Diagnostics.Debug.WriteLine("=================================================");
-            System.Diagnostics.Debug.WriteLine(slashCom.text);
+            System.Diagnostics.Debug.WriteLine(slashCom.Text);
             System.Diagnostics.Debug.WriteLine("=================================================");
             if (!ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace API.Controllers
                 return Content("No given Email exist!");
             }
             
-                return Content(slashCom.text);
+                return Content(slashCom.Text);
             
             //return Content(returnText.Text);
         }

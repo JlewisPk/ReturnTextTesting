@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,18 +8,34 @@ namespace API.Models
 {
     public class SlashCom
     {
-        public string token { get; set; }
-        public string team_id { get; set; }
-        public string team_domain { get; set; }
-        public string enterprise_id { get; set; }
-        public string enterprise_name { get; set; }
-        public string channel_id { get; set; }
-        public string channel_name { get; set; }
-        public string user_id { get; set; }
-        public string user_name { get; set; }
-        public string command { get; set; }
-        public string text { get; set; }
-        public string response_url { get; set; }
-        public string trigger_id { get; set; }
+        [JsonProperty("token")]
+        public string Token { get; set; }
+
+        [JsonProperty("team_id")]
+        public string TeamId { get; set; }
+
+        [JsonProperty("team_domain")]
+        public string TeamDomain { get; set; }
+
+        [JsonProperty("channel_id")]
+        public string ChannelId { get; set; }
+
+        [JsonProperty("channel_name")]
+        public string ChannelName { get; set; }
+
+        [JsonProperty("user_id")]
+        public string UserId { get; set; }
+
+        [JsonProperty("user_name")]
+        public string UserName { get; set; }
+
+        [JsonProperty("command")]
+        public string Command { get; set; }
+
+        [JsonProperty("text")]
+        public string Text { get; set; }
+
+        [JsonProperty("response_url")]
+        public string ResponseUrl { get; set; }
     }
 }
