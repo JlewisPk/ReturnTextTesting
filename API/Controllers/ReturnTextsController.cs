@@ -46,7 +46,7 @@ namespace API.Controllers
             return Ok(returnText);
         }
         // GET: api/ReturnTexts/5
-        [HttpGet("/getText/{id}")]
+        [HttpPost("/getText/{id}")]
         public async Task<ContentResult> GetReturnTextUsingEmail([FromRoute] int id)
         {
             if (!ModelState.IsValid)
